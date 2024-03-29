@@ -25,7 +25,7 @@ class CollectTest extends TestCase
     public function testValuesNotSame()
     {
         $collect = new Collect\Collect(['x' => 1, 'y' => 2]);
-        $this->assertNotSame([4, 5], $collect->values()->toArray());
+        $this->assertNotSame([2, 1], $collect->values()->toArray());
     }
 
     public function testGetWithKeySame()
