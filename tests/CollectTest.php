@@ -37,7 +37,7 @@ class CollectTest extends TestCase
     public function testGetWithKeyNotSame()
     {
         $collect = new Collect\Collect(['x' => 1, 'y' => 2]);
-        $this->assertNotSame(3, $collect->get('x'));
+        $this->assertNotSame(2, $collect->get('x'));
     }
 
     public function testGetWithoutKeySame()
@@ -61,7 +61,7 @@ class CollectTest extends TestCase
     public function testExceptWithArrayNotSame()
     {
         $collect = new Collect\Collect(['x' => 1, 'y' => 2, 'z' => 3]);
-        $this->assertNotSame(['y' => 1, 'z' => 2], $collect->except(['y'])->toArray());
+        $this->assertNotSame(['y' => 2, 'z' => 3], $collect->except(['y'])->toArray());
     }
 
     public function testExceptWithMultipleArgumentsSame()
@@ -85,7 +85,7 @@ class CollectTest extends TestCase
     public function testOnlyWithArrayNotSame()
     {
         $collect = new Collect\Collect(['x' => 1, 'y' => 2, 'z' => 3]);
-        $this->assertNotSame(['y' => 1, 'z' => 2], $collect->only(['y'])->toArray());
+        $this->assertNotSame(['y' => 2, 'z' => 3], $collect->only(['y'])->toArray());
     }
 
     public function testOnlyWithMultipleArgumentsSame()
